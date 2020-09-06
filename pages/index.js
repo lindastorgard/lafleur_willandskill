@@ -22,14 +22,11 @@ const Home = ({ flowers }) => {
   );
 };
 
-// This function gets called at build time
+// Called at build time
 export async function getStaticProps() {
-  // Call an external API endpoint to get posts
   const res = await fetch('https://flowers-mock-data.firebaseio.com/flowers.json')
   const flowers = await res.json()
 
-  // By returning { props: flowers }, the Home component
-  // will receive `flowers` as a prop at build time
   return {
     props: {
       flowers,

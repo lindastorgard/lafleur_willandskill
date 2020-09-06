@@ -23,7 +23,7 @@ const FlowerDetails = ({ flower }) => {
   )
 }
 
-// This function gets called at build time
+// Called at build time
 export async function getStaticPaths() {
   const res = await fetch('https://flowers-mock-data.firebaseio.com/flowers.json')
   const flowers = await res.json()
@@ -32,7 +32,7 @@ export async function getStaticPaths() {
   return { paths, fallback: false }
 };
 
-// This also gets called at build time
+// Called at build time
 export async function getStaticProps({ params }) {
   const res = await fetch(`https://flowers-mock-data.firebaseio.com/flowers/${params.id}.json`)
   const flower = await res.json()
