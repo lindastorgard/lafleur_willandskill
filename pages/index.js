@@ -1,26 +1,40 @@
-import Head from 'next/head'
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+import Head from 'next/head';
+import Layout from "../components/Layout";
+import HeroSection from '../components/HeroSection';
+import IngressSection from '../components/IngressSection';
+import Products from '../components/Products';
 
-export default function Home() {
+const Home = ({ flowers }) => {
+  console.log(flowers);
   return (
-    <div>
+    <Layout>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>La Fleur | Home</title>
       </Head>
+        <div>
+          <HeroSection />
+          <IngressSection title={"Our vision"} />
+          <Products section={flowers} />
+        </div>
+    </Layout>
+  );
+};
 
-      <main>
-      </main>
+// This function gets called at build time
+export async function getStaticProps() {
+  // Call an external API endpoint to get posts
+  const res = await fetch('https://flowers-mock-data.firebaseio.com/flowers.json')
+  const flowers = await res.json()
 
-      <footer>
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by companyX
-          <img src="/vercel.svg" alt="Vercel Logo" />
-        </a>
-      </footer>
-    </div>
-  )
+  // By returning { props: flowers }, the Home component
+  // will receive `flowers` as a prop at build time
+  return {
+    props: {
+      flowers,
+    },
+  }
 }
+
+export default Home;
