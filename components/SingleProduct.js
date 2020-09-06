@@ -18,16 +18,30 @@ const SingleProduct = ({ flower }) => {
         }}
       >
         <div sx={{width: "100%", height: "100%"}}>
-          <img 
-            src={flower.cover_image} 
-            alt={flower.common_name} 
-            sx={{
-              objectFit: "cover",
-              width: "100%",
-              height: "100%",
-              borderRadius: "5px",
-            }} 
-          />
+          {flower.cover_image !== "" && (
+            <img 
+              src={flower.cover_image}
+              alt={flower.common_name}
+              sx={{
+                objectFit: "cover",
+                width: "100%",
+                height: "100%",
+                borderRadius: "5px",
+              }} 
+            />
+          )}
+          {flower.cover_image === "" && (
+            <img 
+              src="/noimage.png"
+              alt="no image"
+              sx={{
+                objectFit: "cover",
+                width: "100%",
+                height: "100%",
+                borderRadius: "5px",
+              }} 
+            />
+          )}
         </div>
       </div>
       <div
