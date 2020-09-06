@@ -17,8 +17,9 @@ const Comments = ({ id }) => {
   console.log(openModal)
   
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = (forminput) => {
+  const onSubmit = (forminput, e) => {
     postComment(forminput);
+    e.target.reset();
   };
 
   useEffect(() => {
@@ -219,7 +220,13 @@ const Comments = ({ id }) => {
           })): null }
         </div>
         {openModal === true && key? (
-          <Modal singleComment={singleComment} setOpenModal={setOpenModal} openModal={openModal} id={id} productKey={key} />
+          <Modal 
+            singleComment={singleComment} 
+            setSingleComment={setSingleComment} 
+            setOpenModal={setOpenModal} 
+            id={id} 
+            setKey={setKey} 
+            productKey={key} />
         ): null}
       </section>
   )

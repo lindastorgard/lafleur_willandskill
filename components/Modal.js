@@ -5,7 +5,15 @@ import Button from '../components/Button';
 import { useRouter } from 'next/router'
 import axios from 'axios';
 
-const Modal = ({ singleComment, setOpenModal, openModal, productKey, id }) => {
+const Modal = ({ 
+  singleComment, 
+  setSingleComment, 
+  setOpenModal, 
+  setKey, 
+  productKey, 
+  id 
+  }) => {
+  
   const router = useRouter()
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (forminput) => {
@@ -98,7 +106,7 @@ const Modal = ({ singleComment, setOpenModal, openModal, productKey, id }) => {
               <Button title={"Update comment"} form={"form2"}/>
             </div>
             <button 
-              onClick={() => setOpenModal(false)}
+              onClick={() => {setOpenModal(false), setKey(null), setSingleComment(null) }}
               sx={{
                 position: "absolute",
                 top: 0,
