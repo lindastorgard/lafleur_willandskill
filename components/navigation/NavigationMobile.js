@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import Hamburger from "./hamburger";
+import Hamburger from "./Hamburger";
 import { useState, useEffect } from "react";
 import DropDownMobile from "./dropdownMobile";
 import NavigationLink from "./NavigationLink";
