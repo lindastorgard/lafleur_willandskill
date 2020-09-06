@@ -68,20 +68,20 @@ const NavigationDesktop = () => {
           alignItems: "center",
           p: 0,
           li: {
-            a: {
+            span: {
               color: showBackground || !landingpage ? "black" : "white",
             },
           },
         }}
       >
           <NavigationLink href="/" color={showBackground || !landingpage ? "highlight" : "white"}>
-            <a>Blog</a>
+            <span>Blog</span>
           </NavigationLink>
           <NavigationLink href="/" color={showBackground || !landingpage ? "highlight" : "white"}>
-            <a>Our Story</a>
+            <span>Our Story</span>
           </NavigationLink>
           <NavigationLink href="/" color={showBackground || !landingpage ? "highlight" : "white"}>
-            <a>Contact</a>
+            <span>Contact</span>
           </NavigationLink>
       </ul>
       <div sx={{ display: "flex" }}>

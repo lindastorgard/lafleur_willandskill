@@ -27,7 +27,6 @@ const Modal = ({
       comment: forminput.comment
     })
     .then((response) => {
-      console.log(response);
     }, (error) => {
       console.log(error);
     });

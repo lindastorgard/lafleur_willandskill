@@ -13,8 +13,6 @@ const Comments = ({ id }) => {
   const [openModal, setOpenModal] = useState(false);
   const [key, setKey] = useState(null);
   const [singleComment, setSingleComment] = useState(null);
-
-  console.log(openModal)
   
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (forminput, e) => {
@@ -26,7 +24,6 @@ const Comments = ({ id }) => {
     const getComments = () => {
       axios.get(`https://flowers-mock-data.firebaseio.com/comments/lindastorgard/${id}.json`)
       .then((response) => {
-        console.log("all comments", response);
         setComments(response.data)
       }, (error) => {
         console.log(error);
@@ -48,7 +45,6 @@ const Comments = ({ id }) => {
   const getSingleComment = (key) => {
     axios.get(`https://flowers-mock-data.firebaseio.com/comments/lindastorgard/${id}/${key}.json`)
     .then((response) => {
-      console.log("single comment", response);
       setSingleComment(response.data);
     }, (error) => {
       console.log(error);
@@ -59,7 +55,6 @@ const Comments = ({ id }) => {
   const deleteComment = (key) => {
     axios.delete(`https://flowers-mock-data.firebaseio.com/comments/lindastorgard/${id}/${key}.json`)
     .then((response) => {
-      console.log("delete comment", response);
       axios.get(`https://flowers-mock-data.firebaseio.com/comments/lindastorgard/${id}.json`)
     .then(res => {
       setComments(res.data)
@@ -75,7 +70,6 @@ const Comments = ({ id }) => {
       comment: forminput.comment
     })
     .then((response) => {
-      console.log("post comment", response);
       axios.get(`https://flowers-mock-data.firebaseio.com/comments/lindastorgard/${id}.json`)
     .then(res => {
       setComments(res.data)
