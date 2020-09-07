@@ -108,13 +108,13 @@ const Footer = () => {
                   <TwitterIcon width="25px" fill="black" />
                 </a>
             </div>
-            <Link href="#">
+            <Link href="/">
               <a sx={linkStyle}>Blog</a>
             </Link>
-            <Link href="#">
+            <Link href="/">
               <a sx={linkStyle}>Our Story</a>
             </Link>
-            <Link href="#">
+            <Link href="/">
               <a sx={linkStyle}>Contact</a>
             </Link>
           </div>
