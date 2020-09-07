@@ -79,25 +79,26 @@ const NavigationMobile = ({}) => {
             p: 0,
             li: {
               a: {
+                m: 1,
                 color: "black",
               },
             },
           }}
         >
           <NavigationLink href={`/`}>
-            About
+            <a>About</a>
           </NavigationLink>
           <NavigationLink href={`/`}>
-            Products
+            <a>Products</a>
           </NavigationLink>
           <NavigationLink href={`/`}>
-            Contact
+            <a>Contact</a>
           </NavigationLink>
         </ul>
         <div 
           sx={{ 
             display: "flex", 
-            ml: "40px", 
+            ml: 3, 
             mt: 7 
           }}
         >
