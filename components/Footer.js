@@ -55,12 +55,12 @@ const Footer = () => {
           <p sx={{m: 0}}>Postal code</p>
           <p sx={{m: 0}}>City</p>
           <p sx={{m: 0, mb: 2}}>Country</p>
-          <a sx={linkStyle} href="/">
-            <a>+46 XX XXXX XXX</a>
-          </a>
-          <a sx={linkStyle} href="/">
-            <a>info@company.com</a>
-          </a>
+          <Link href="/">
+            <a sx={{fontFamily: "body", display: "block"}}>+46 XX XXXX XXX</a>
+          </Link>
+          <Link href="/">
+            <a sx={{fontFamily: "body", display: "block"}}>info@company.com</a>
+          </Link>
         </div>
         <div>
           <div sx={{ display: "flex", flexDirection: "column", my: [2, 0 ]}}>
@@ -98,13 +98,13 @@ const Footer = () => {
                 </a>
             </div>
             <Link href="/" >
-              <a sx={{fontFamily: "body"}}>Blog</a>
+              <a sx={{fontFamily: "body", display: "block"}}>Blog</a>
             </Link>
             <Link href="/">
-              <a sx={{fontFamily: "body"}}>Our Story</a>
+              <a sx={{fontFamily: "body", display: "block"}}>Our Story</a>
             </Link>
             <Link href="/">
-              <a sx={{fontFamily: "body"}}>Contact</a>
+              <a sx={{fontFamily: "body", display: "block"}}>Contact</a>
             </Link>
           </div>
         </div>
