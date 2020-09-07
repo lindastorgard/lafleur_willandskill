@@ -17,7 +17,7 @@ const SingleProduct = ({ flower }) => {
           p: [3, 4, 6],
         }}
       >
-        <div sx={{width: "100%", height: "100%"}}>
+        <div sx={{width: "100%", height: ["350px", "100%", null]}}>
           {flower.cover_image !== "" && (
             <img 
               src={flower.cover_image}
