@@ -13,11 +13,10 @@ const Footer = () => {
     textDecoration: "none",
     fontFamily: "body",
     color: "text",
-    p: {
+    a: {
       display: "inline-block",
       mx: 0,
       my: 0,
-
       "::after": {
         content: '" "',
         display: "block",
@@ -32,17 +31,7 @@ const Footer = () => {
         "::after": {
           width: "100%",
         },
-      },
-      ":active": {
-        "::after": {
-          width: "100%",
-        },
-      },
-      "&.active": {
-        "::after": {
-          width: "100%",
-        },
-      },
+      }
     },
   };
 
@@ -66,25 +55,25 @@ const Footer = () => {
           <p sx={{m: 0}}>Postal code</p>
           <p sx={{m: 0}}>City</p>
           <p sx={{m: 0, mb: 2}}>Country</p>
-          <a sx={linkStyle} href="#">
-            <p>+46 XX XXXX XXX</p>
+          <a sx={linkStyle} href="/">
+            <a>+46 XX XXXX XXX</a>
           </a>
-          <a sx={linkStyle} href="#">
-            <p>info@company.com</p>
+          <a sx={linkStyle} href="/">
+            <a>info@company.com</a>
           </a>
         </div>
         <div>
           <div sx={{ display: "flex", flexDirection: "column", my: [2, 0 ]}}>
             <div sx={{ display: "flex" }}>
                 <a
-                  href="#"
+                  href="/"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
                   <InstagramIcon width="25px" fill="black" />
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   sx={{ ml: 3, pb: 2 }}
                   target="_blank"
                   rel="noreferrer noopener"
@@ -93,7 +82,7 @@ const Footer = () => {
                 </a>
                 <a
                   sx={{ ml: 3, pb: 2 }}
-                  href="#"
+                  href="/"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
@@ -101,21 +90,21 @@ const Footer = () => {
                 </a>
                 <a
                   sx={{ ml: 3, pb: 2 }}
-                  href="#"
+                  href="/"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
                   <TwitterIcon width="25px" fill="black" />
                 </a>
             </div>
-            <Link href="/">
-              <a sx={linkStyle}>Blog</a>
+            <Link href="/" >
+              <a sx={{fontFamily: "body"}}>Blog</a>
             </Link>
             <Link href="/">
-              <a sx={linkStyle}>Our Story</a>
+              <a sx={{fontFamily: "body"}}>Our Story</a>
             </Link>
             <Link href="/">
-              <a sx={linkStyle}>Contact</a>
+              <a sx={{fontFamily: "body"}}>Contact</a>
             </Link>
           </div>
         </div>
@@ -128,7 +117,7 @@ const Footer = () => {
       >
         © {new Date().getFullYear()} La Fleur.
         <a
-          href="#"
+          href="/"
           sx={{
             color: "text",
             fontSize: 0,
